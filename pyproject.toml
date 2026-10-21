@@ -1,0 +1,9 @@
+[project]
+name = "adk-voice-agent"
+version = "0.1.0"
+description = "A general-purpose voice chat agent that never goes silent, built with Google ADK"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "google-adk>=2.10.0",
+]
