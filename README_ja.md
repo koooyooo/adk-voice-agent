@@ -2,7 +2,7 @@
 
 [English](README.md) | 日本語
 
-黙らない汎用音声チャット（Google ADK + `gemini-3.8-live`）。設計は [docs/voice-agent-dd.md](docs/voice-agent-dd.md)。
+黙らない汎用音声チャット（Google ADK + `gemini-3.8-live`）。Google Developers Blog の記事 [Step-by-step guide: Build a voice agent that never goes silent using ADK](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/) の手法を実装している。設計は [docs/voice-agent-dd.md](docs/voice-agent-dd.md)。
 
 ## 起動
 
@@ -26,7 +26,7 @@ uv run adk web                          # 改善後: 進捗を話しながら調
 
 ## サンプルのツールについて
 
-`voice_agent/tools/samples.py` の調べ物ツールは**模擬**である。実際には何も検索せず、遅いバックエンドを再現するために `asyncio.sleep` で約13秒（検索 4秒 → 読む 5秒 → まとめる 4秒）待つだけ。13秒は元記事の例（13秒かかるクエリ）に合わせた値で、エージェントが最後に話す答えはモデル自身の知識による。
+`voice_agent/tools/samples.py` の調べ物ツールは**模擬**である。実際には何も検索せず、遅いバックエンドを再現するために `asyncio.sleep` で約13秒（検索 4秒 → 読む 5秒 → まとめる 4秒）待つだけ。13秒は[元記事](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/)の例（13秒かかるクエリ）に合わせた値で、エージェントが最後に話す答えはモデル自身の知識による。
 
 このプロジェクトで確かめているのは、遅いツールの実行中も会話を続ける手法であり、調べ物の質ではない。
 

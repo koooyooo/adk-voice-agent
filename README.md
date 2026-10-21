@@ -2,7 +2,7 @@
 
 English | [日本語](README_ja.md)
 
-A general-purpose voice chat agent that never goes silent, built with Google ADK and `gemini-3.8-live`. See the design document (Japanese) at [docs/voice-agent-dd.md](docs/voice-agent-dd.md).
+A general-purpose voice chat agent that never goes silent, built with Google ADK and `gemini-3.8-live`. It implements the technique from the Google Developers Blog article [Step-by-step guide: Build a voice agent that never goes silent using ADK](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/). See the design document (Japanese) at [docs/voice-agent-dd.md](docs/voice-agent-dd.md).
 
 ## Getting started
 
@@ -26,7 +26,7 @@ Ask something like "Can you look up ..." to feel the difference.
 
 ## About the sample tools
 
-The research tool in `voice_agent/tools/samples.py` is a **mock**. It does not search anything: it only waits about 13 seconds with `asyncio.sleep` (search 4s → read 5s → summarize 4s) to simulate a slow backend, matching the 13-second query in the original article. The answer the agent gives afterwards comes from the model's own knowledge.
+The research tool in `voice_agent/tools/samples.py` is a **mock**. It does not search anything: it only waits about 13 seconds with `asyncio.sleep` (search 4s → read 5s → summarize 4s) to simulate a slow backend, matching the 13-second query in the [original article](https://developers.googleblog.com/step-by-step-guide-build-a-voice-agent-that-never-goes-silent-using-adk/). The answer the agent gives afterwards comes from the model's own knowledge.
 
 This project verifies the technique of staying conversational while a slow tool runs, not the quality of the research itself.
 
